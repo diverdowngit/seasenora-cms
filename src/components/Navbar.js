@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import { Link } from "gatsby";
 // import github from "../img/github-icon.svg";
 import {
@@ -14,11 +14,11 @@ import * as styles from "./styles/Navbar.module.css";
 const Navbar = () => {
  
   const [active, setActive] = React.useState(false);
-  const innerHeight = window.innerHeight - 74;
+  const innerHeight =   document.innerHeight - 74;
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('scroll', changeNavbarColor);
-    return () => window.removeEventListener('scroll', changeNavbarColor);
+    return () => document.removeEventListener('scroll', changeNavbarColor);
   }, []);
 
   function changeNavbarColor() {
@@ -63,9 +63,7 @@ const Navbar = () => {
       <a href="https://www.instagram.com/svseasenora/"target="_blank" rel="noreferrer" ><AiOutlineInstagram /></a>
           <a href="https://www.youtube.com/channel/UCpaA07tlk3PA44WApp8oKDw"target="_blank" rel="noreferrer" ><AiOutlineYoutube /></a> 
           <a href="https://www.facebook.com/profile.php?id=100085674495009" target="_blank" rel="noreferrer" ><FaFacebookF /></a>
-        <div className={styles.searchbox}>
-
-</div> 
+       
       </div>
     </div>
   </div>
