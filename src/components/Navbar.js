@@ -17,12 +17,12 @@ const Navbar = () => {
   const innerHeight = window.innerHeight - 74;
 
   React.useEffect(() => {
-    window.addEventListener('scroll', changeNavbarColor);
+    document.addEventListener('scroll', changeNavbarColor);
     return () => window.removeEventListener('scroll', changeNavbarColor);
   }, []);
 
   function changeNavbarColor() {
-    if (window.scrollY >= innerHeight) {
+    if ( document.scrollY >= innerHeight) {
       setActive(true);
     } else {
       setActive(false);
